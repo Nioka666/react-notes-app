@@ -1,21 +1,21 @@
-import "boxicons";
+import { useState } from "react";
+import { addNote, archiveNote, deleteNote } from "../utils";
+import { genID, getDate } from "../data/env";
 
 export default function Aside() {
+    const [formData, setFormData] = useState({
+        id: genID,
+        title: "Title test",
+        body: "Body test...",
+        archived: false,
+        createdAt: getDate,
+    });
     const asideBtnMenu = [
-        { name: "Add Note", method: addNote, icon: "bx bx-plus", style: "" },
+        { name: "Add Note", method: () => addNote(formData), icon: "bx bx-plus", style: "" },
         { name: "Archived", method: archiveNote, icon: "bx bx-archive-in", style: "" },
         { name: "Deleted", method: deleteNote, icon: "bx bx-trash-alt", style: "text-red-500" }
     ]
-    function addNote() {
-        console.log("add note..");
-    }
-    function archiveNote() {
-        console.log("archiving note..");
-    }
-    function deleteNote() {
-        console.log("deleting note..");
-    }
-
+    
     return (
         <aside>
             <div className="btn-group grid gap-6">
