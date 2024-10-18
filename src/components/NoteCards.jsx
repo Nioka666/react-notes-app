@@ -1,27 +1,7 @@
+import { dummyNotes } from "../data/dummyNote";
+import { noteEdit } from "../utils";
+
 export default function NoteCards() {
-    const getDate = new Date().toISOString();
-    const dummyNotes = [
-        {
-            id: Math.random().toString(16).substring(2),
-            title: "Title 1",
-            body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi odit doloremque id aspernatur deleniti assuoluptate dolorem dolo quaerat illellat vel! Ipsa!",
-            archived: false,
-            createdAt: getDate
-        },
-        {
-            id: Math.random().toString(16).substring(2),
-            title: "Title 3",
-            body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi odit doloremque id aspernatur uaerat illo magnam nobis, aut provident, repellat vel! Ipsa!",
-            archived: false,
-            createdAt: getDate
-        },
-    ];
-
-    function noteEdit(noteID) {
-        const getNote = localStorage.getItem(noteID); // soon
-        console.log(noteID);
-    }
-
     return (
         <section className="notes grid grid-cols-3 max-sm:grid-cols-1 mt-10 gap-5">
             {dummyNotes.map((note, index) => (

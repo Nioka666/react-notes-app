@@ -7,7 +7,6 @@ export default function Index() {
         <h1 className="text-2xl max-sm:text-xl text-gray-500 font-bold">My Notes</h1>
         <h2 className="text-gray-400 mt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, saepe!</h2>
       </section>
-      {/* menu navigasi */}
       <NoteCards />
     </>
   );
